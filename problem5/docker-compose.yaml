@@ -15,18 +15,6 @@ services:
         networks:
             - problem5-networks
 
-    # server_nodejs:
-    #     build:
-    #         dockerfile: Dockerfile
-    #         context: ./server
-    #     container_name: server_nodejs
-    #     ports:
-    #         - "8000:8000"
-    #     depends_on:
-    #         - "postgres_test"
-    #     networks:
-    #         - problem5-networks
-
 networks:
     problem5-networks:
         driver: bridge
