@@ -1,0 +1,173 @@
+{
+    "info": {
+        "_postman_id": "84ee82a3-63c1-4e29-86fb-8e9781c6ff42",
+        "name": "99tech",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "28957536"
+    },
+    "item": [
+        {
+            "name": "create resource",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"Product 3\",\r\n    \"desc\": \"Description\",\r\n    \"price\": 30000\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8099/api/v1/resource",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8099",
+                    "path": ["api", "v1", "resource"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "update resource",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"Product 4\",\r\n    // \"desc\": \"Description\",\r\n    \"price\": 33000\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8099/api/v1/resource/4",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8099",
+                    "path": ["api", "v1", "resource", "4"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "delete resource",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8099/api/v1/resource/4",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8099",
+                    "path": ["api", "v1", "resource", "4"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "get resource",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8099/api/v1/resource/1",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8099",
+                    "path": ["api", "v1", "resource", "1"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "get resources",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8099/api/v1/resource",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8099",
+                    "path": ["api", "v1", "resource"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "get resources filter",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8099/api/v1/resource/query?minPrice=28000&name=product",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8099",
+                    "path": ["api", "v1", "resource", "query"],
+                    "query": [
+                        {
+                            "key": "minPrice",
+                            "value": "28000"
+                        },
+                        {
+                            "key": "name",
+                            "value": "product"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
