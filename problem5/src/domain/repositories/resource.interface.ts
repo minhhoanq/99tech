@@ -14,8 +14,8 @@ export interface ResourceFilter {
 }
 
 export interface IResourceRepository {
-    findMany(): Promise<Resource[] | null>;
-    find(filter: ResourceFilter): Promise<Resource[] | null>;
+    findMany(): Promise<Resource[]>;
+    find(filter: ResourceFilter): Promise<Resource[]>;
     findById(id: number): Promise<Resource | null>;
     create(data: CreateResourceDto): Promise<Resource>;
     update(id: number, data: UpdateResourceDto): Promise<Resource>;

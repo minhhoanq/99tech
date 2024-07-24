@@ -21,9 +21,7 @@ export class ResourceService implements IResourceService {
     }
 
     //get resource by filter
-    async getResourcesFilter(
-        filters: ResourceFilter
-    ): Promise<Resource[] | null> {
+    async getResourcesFilter(filters: ResourceFilter): Promise<Resource[]> {
         return await this._ResourceRepo.find(filters);
     }
 
@@ -41,11 +39,7 @@ export class ResourceService implements IResourceService {
     async createResource(
         createResourceDTO: CreateResourceDto
     ): Promise<Resource> {
-        try {
-            return await this._ResourceRepo.create(createResourceDTO);
-        } catch (error) {
-            throw error;
-        }
+        return await this._ResourceRepo.create(createResourceDTO);
     }
 
     //update resource by id

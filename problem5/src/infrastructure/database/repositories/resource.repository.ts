@@ -19,9 +19,7 @@ export class ResourceRepository implements IResourceRepository {
     }
 
     //find resource by query
-    async find(filter: ResourceFilter): Promise<Resource[] | null> {
-        console.log("chcek");
-
+    async find(filter: ResourceFilter): Promise<Resource[]> {
         const {
             name,
             page = 1,
@@ -38,7 +36,7 @@ export class ResourceRepository implements IResourceRepository {
             ...(name ? { name: { contains: name, mode: "insensitive" } } : {}),
         };
 
-        const result: Resource[] | null = await this._prisma.resource.findMany({
+        const result: Resource[] = await this._prisma.resource.findMany({
             where,
             orderBy: {
                 name: "asc",
@@ -53,12 +51,12 @@ export class ResourceRepository implements IResourceRepository {
             take: pageSize,
         });
 
-        return result.length > 0 ? result : null;
+        return result;
     }
 
     //find all resource
-    async findMany(): Promise<Resource[] | null> {
-        const result: Resource[] | null = await this._prisma.resource.findMany({
+    async findMany(): Promise<Resource[]> {
+        const result: Resource[] = await this._prisma.resource.findMany({
             select: {
                 id: true,
                 name: true,
@@ -66,7 +64,7 @@ export class ResourceRepository implements IResourceRepository {
                 price: true,
             },
         });
-        return result.length > 0 ? result : null;
+        return result;
     }
 
     //find resource by id
